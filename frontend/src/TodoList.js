@@ -54,8 +54,8 @@ const TodoList = () => {
   };
 
   return (
-    <div>
-      <h1>Todo List</h1>
+    <div className="container">
+      <h1 id="todo-heading">Todo List</h1>
       {error ? (
         <p style={{ color: 'red' }}>{error}</p>
       ) : (
