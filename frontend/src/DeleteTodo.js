@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 const DeleteTodo = ({deleteTodo, todoId}) => {
 
@@ -8,7 +10,8 @@ const DeleteTodo = ({deleteTodo, todoId}) => {
 
 
     return(
-        <button onClick={handleDeleteTodo}>Delete</button>
+        <button className="deletetodo-btn" onClick={handleDeleteTodo}>
+            <FontAwesomeIcon icon={faTrashArrowUp} /></button>
     );
 
 };
