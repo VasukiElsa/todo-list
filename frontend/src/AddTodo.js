@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import './TodoList.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const AddTodo = ({addTodo}) => {
 
@@ -22,7 +24,8 @@ return(
            placeholder="Add new todo"
         />
 
-        <button  className="add-action" onClick={handleAddTodo}>Add</button>
+        <button  className="add-action" onClick={handleAddTodo}>
+        <FontAwesomeIcon icon={faPlus} /> </button>
     </div>
 );
 
