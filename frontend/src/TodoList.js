@@ -63,7 +63,11 @@ const TodoList = () => {
           <ul className="todo-list">
             {todos.map((todo) => (
               <li key={todo.id} className="todo-card">
-                <span className="todo-text">{todo.text}</span>
+                <div className="todo-content">
+                  <div className="todo-text">{todo.text}</div>
+                  <div className="todo-date">{todo.formatted_created_date}</div>
+                  <div className="todo-date">{new Date(todo.created_date).toLocaleTimeString()}</div>
+                </div>
                 <div className="todo-actions">
                   <EditTodo editTodo={editTodo} todoId={todo.id} initialText={todo.text} />
                   <DeleteTodo deleteTodo={deleteTodo} todoId={todo.id} />
