@@ -28,7 +28,10 @@ class TodoSerializer(serializers.ModelSerializer):
 		else:
 			diff_in_days = (today - date).days
 
-			if diff_in_days > 15:
+			if diff_in_days == 1:
+				return f'{diff_in_days} day ago'
+
+			elif diff_in_days > 15:
 				return date.strftime("%d-%m-%y") 
 			return f'{diff_in_days} days ago'
 	
