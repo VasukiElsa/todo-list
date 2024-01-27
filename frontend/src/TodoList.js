@@ -56,17 +56,16 @@ const TodoList = () => {
   return (
     <div className="container">
       <h1 id="todo-heading">Todo List</h1>
-      {error ? (
-        <p style={{ color: 'red' }}>{error}</p>
-      ) : (
         <>
           <ul className="todo-list">
             {todos.map((todo) => (
               <li key={todo.id} className="todo-card">
+                
                 <div className="todo-content">
                   <div className="todo-text">{todo.text}</div>
                   <div className="todo-date">{todo.formatted_created_date}, at {new Date(todo.created_date).toLocaleTimeString()}</div>
                 </div>
+
                 <div className="todo-actions">
                   <EditTodo editTodo={editTodo} todoId={todo.id} initialText={todo.text} />
                   <DeleteTodo deleteTodo={deleteTodo} todoId={todo.id} />
@@ -76,7 +75,6 @@ const TodoList = () => {
           </ul>
           <AddTodo addTodo={addTodo} />
         </>
-      )}
     </div>
   );
 };
